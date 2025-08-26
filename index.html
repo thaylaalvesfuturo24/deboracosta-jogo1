@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maze.exe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="game-container">
+        <h1>MAZE.EXE</h1>
+
+        <!-- Tela Inicial -->
+        <div id="start-screen" class="screen">
+            <h2>SISTEMA INICIADO...</h2>
+            <p>Seu pacote de dados precisa chegar ao Portal de Saída. Navegue pelo labirinto digital. Use as setas do teclado ou toque.</p>
+            <button onclick="startGame()">INICIAR</button>
+        </div>
+
+        <!-- Informações do jogo -->
+        <div id="game-info" class="hidden">
+            <p>Nível: <span id="level-counter">1</span> | Movimentos: <span id="move-counter">0</span></p>
+        </div>
+
+        <!-- Labirinto -->
+        <div id="maze-container" class="hidden"></div>
+
+        <!-- Controles Touch/Visuais -->
+        <div id="touch-controls" class="hidden">
+            <div class="control-row">
+                <button class="control-btn" onclick="move('ArrowUp')">▲</button>
+            </div>
+            <div class="control-row">
+                <button class="control-btn" onclick="move('ArrowLeft')">◀</button>
+                <button class="control-btn" onclick="move('ArrowDown')">▼</button>
+                <button class="control-btn" onclick="move('ArrowRight')">▶</button>
+            </div>
+        </div>
+
+        <!-- Tela Final -->
+        <div id="end-screen" class="screen hidden">
+            <h2 id="end-title"></h2>
+            <p id="end-message"></p>
+            <button onclick="restartGame()">PRÓXIMA FASE</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
